@@ -18,18 +18,36 @@ stopword = {'ourselves', 'hers', 'between', 'yourself', 'but', 'again', 'there',
     'theirs', 'my', 'against', 'a', 'by', 'doing', 'it', 'how', ...
     'further', 'was', 'here', 'than', ''}; % define English stop words, from NLTK
 
-
+words = []
 
 files = dir(fullfile(folder,'*.txt'));
-
 for file = files'
     [fid, msg] = fopen(fullfile(folder,file.name), 'rt');
     error(msg);
     line = fgets(fid); % Get the first line from
      % the file.
     while line ~= -1
-
         %PUT YOUR IMPLEMENTATION HERE
+        
+        % REQUIRES TEXT ANALYTICS TOOLBOX
+        line = erasePunctuation(line); 
+        line = strsplit(line);
+        preProLine = [];        
+        for i = 1:length(line)
+            % if word not in stopword
+            if ~any(strcmp(stopword,line(i)))
+                % if word is also not already a part of the voc
+                if ~any(strcmp(words,line(i)))
+                    words = [words, line(i)]
+%                 preProLine{end+1} = line(i);
+                end
+            end  
+        end
+%         voc{end+1} = preProLine;
+        line = fgets(fid);
     end
     fclose(fid);
+end
+disp(words);
+
 end
