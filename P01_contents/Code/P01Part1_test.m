@@ -11,7 +11,7 @@ negFolder = '../Data/kNN/training/neg';
 % negative reviews
 voc = {}; %vocabulary is cell array of character vectors.
 voc = buildVoc(posFolder,voc);
-% voc = buildVoc(negFolder,voc);
+voc = buildVoc(negFolder,voc);
 display( voc );
 
 
