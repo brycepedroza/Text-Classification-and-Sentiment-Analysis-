@@ -9,8 +9,18 @@ line = fgets(fid); % Get the first line from
 feat_vec = zeros(size(voc)); %Initialize the feature vector'
 
 while line ~= -1
-
     %PUT YOUR IMPLEMENTATION HERE
-    
+    line = erasePunctuation(line); 
+    line = strsplit(line);
+     for i = 1:length(line)
+        % if word in voc
+        if any(strcmp(voc,line(i)))
+            % Gets the index for the word in voc, 
+            % then increments that index
+            feat_vec(find(strcmp(voc, line(i)))) = feat_vec(find(strcmp(voc, line(i)))) + 1;
+        end
+     end
+     line = fgets(fid);
+
 end
 fclose(fid);
