@@ -23,5 +23,4 @@ while line ~= -1
      line = fgets(fid);
 
 end
-a = 1;
 fclose(fid);
