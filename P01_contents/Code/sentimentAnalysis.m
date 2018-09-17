@@ -40,8 +40,8 @@ ii = 1;
 spc = {'.','!','?',',','-',';',':''(',')','{','}','[',']','''','%','\t','\n'};
 while line ~= -1
      %Store each word in the test_token array
+     line = lower(line);
      [test_token{ii}, line] = strtok(line);
-     test_token{ii} = lower(test_token{ii});
      test_token{ii} = replace(test_token{ii},spc,' ');
      ii = ii + 1;
      %PUT YOUR IMPLEMENTATION HERE
