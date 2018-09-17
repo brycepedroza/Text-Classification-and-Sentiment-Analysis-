@@ -32,10 +32,9 @@ elseif DstType == 3 %Number of words in common
                 end
             end
         end
-        %value = intersect(test_feat, train_feat_set(:, i));
         dist = [dist, count]
     end
-    dist = -dist; % Why minus?
+    dist = -dist; % Minus so you want most matches to appear first
 end
 
 %Find the top k nearest neighbors, and do the voting. 

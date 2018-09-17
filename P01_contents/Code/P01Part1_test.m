@@ -76,8 +76,8 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 correct_ct = 0; % counter for correct classifications
-DistType = 3; % test different distance type
-K = 3; % test different K.
+DistType = 2; % test different distance type
+K = 15; % test different K.
 
 % Now we go over each test file to compute its label and check for
 % correctness
