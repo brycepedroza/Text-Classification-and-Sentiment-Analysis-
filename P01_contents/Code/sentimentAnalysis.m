@@ -50,6 +50,9 @@ fclose(fid);
 
 sent_score = 0;
 for k=1:length(test_token)
+     if (isKey(cM, test_token{k}) == 1)
+         sent_score = sent_score + cM(test_token{k});
+     end
     %PUT YOUR IMPLEMENTATION HERE
 end 
 
