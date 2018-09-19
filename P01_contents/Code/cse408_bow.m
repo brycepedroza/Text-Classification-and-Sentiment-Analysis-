@@ -16,7 +16,7 @@ while line ~= -1
         % if word in voc
         if any(strcmp(voc,line(i)))
             % Gets the index for the word in voc, 
-            % then increments that index
+            % then increments that indexcse
             feat_vec(find(strcmp(voc, line(i)))) = feat_vec(find(strcmp(voc, line(i)))) + 1;
         end
      end

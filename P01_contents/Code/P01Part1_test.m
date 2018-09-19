@@ -44,8 +44,10 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Compute BOW feature vectors for test files
 
-posFolder = '..\Data\kNN\testing\pos';
-negFolder = '..\Data\kNN\testing\neg';
+posFolder = '../Data/kNN/testing/pos';
+negFolder = '../Data/kNN/testing/neg';
+posFile = '../Data/knn/testing/pos/cv001_18431.txt';
+negFile = '../Data/knn/testing/neg/cv002_17424.txt';
 
 test_feat_set = [];
 test_label_set = []; % this is the set of ground truth labels for the test set
@@ -74,8 +76,8 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 correct_ct = 0; % counter for correct classifications
-DistType = 3; % test different distance type
-K = 3; % test different K.
+DistType = 2; % test different distance type
+K = 15; % test different K.
 
 % Now we go over each test file to compute its label and check for
 % correctness
