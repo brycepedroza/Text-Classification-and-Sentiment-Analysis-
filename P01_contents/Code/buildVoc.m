@@ -60,7 +60,7 @@ end
 %% Saving Words that appear as least an many times as the threshold to voc
 % Change this how we see fit
 threshold = 2;
-k = keys(word_map);
+k = keys(word_map); 
 v = values(word_map);
 j = 1;
 for i=1:length(word_map)
