@@ -37,14 +37,22 @@ line = fgets(fid); % Get the first line from
  % the file.
 test_token={};
 ii = 1;
+spc = {'.','!','?',',','-',';',':''(',')','{','}','[',']','''','%','\t','\n'};
 while line ~= -1
      %Store each word in the test_token array
+     line = lower(line);
+     [test_token{ii}, line] = strtok(line);
+     test_token{ii} = replace(test_token{ii},spc,' ');
+     ii = ii + 1;
      %PUT YOUR IMPLEMENTATION HERE
 end
 fclose(fid);
 
 sent_score = 0;
 for k=1:length(test_token)
+     if (isKey(cM, test_token{k}) == 1)
+         sent_score = sent_score + cM(test_token{k});
+     end
     %PUT YOUR IMPLEMENTATION HERE
 end 
 
